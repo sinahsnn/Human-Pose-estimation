@@ -1,10 +1,10 @@
 # Human-Pose-estimation
 In this repository, a CNN-based Deep Neural Network, capable of detecting human joints from a picture, is implemented.
 ## Preprocessing the data 
-To prepare the data, after loading them with the original size, we first find the length and width of each and store the original image and the inverse of its length and width, which are used as a scale, in a vector. Then multiply the coordinates of the joints in these scales and then subtract 0.5 to determine their normalized coordinates. We have assumed that the center of the box is in the middle of the image.  Then we resize the images to 220 x 220 dimensions, which are the input data of the network. For data preprocessing, divide 220 x 220 images by 255 and We subtract half so that the pixel values are between -0.5 and +0.5. We transform the normalized location of 14 joints from 2 x 14 to a 28 vector. In this way, our data is prepared.
+To prepare the data, after loading them with the original size, we first find the length and width of each and store the original image and the inverse of its length and width, which are used as a scale in a vector. Then multiply the coordinates of the joints in these scales and then subtract 0.5 to determine their normalized coordinates. We have assumed that the center of the box is in the middle of the image. Then we resize the images to 220 x 220 dimensions, which are the input data of the network. For data preprocessing, divide 220 x 220 images by 255, and We subtract half so that the pixel values are between -0.5 and +0.5. We transform the normalized location of 14 joints from 2 x 14 to a 28 vector. In this way, our data is prepared.
 
 ## Procedure
-In this problem we are dealing with 14 joints. PCP metric is defined according to body organs. For this reason, we have chosen 10 body parts for this task, and you can see their list and joints with their numbers below:
+In this problem, we are dealing with 14 joints. PCP metric is defined according to body organs. For this reason, we have chosen 10 body parts for this task, and you can see their list and joints with their numbers below:
 ### Joints 
 -  00 Right ankle 
 -  01 Right knee 
@@ -31,4 +31,8 @@ In this problem we are dealing with 14 joints. PCP metric is defined according t
 - 07 Left Lower Arm: between joints 10 & 11  
 - 08 Head: between joints 12 & 13 
 - 09 Torso: between joints mean of 2 & 3 and mean of 8 & 9
-
+## Metrics
+### PCP : 
+The PCP criterion means organ detection rate. We say that an organ is diagnosed when the distance between the two joints of its two ends from the main location of the joints is less than half the length of the organ. In this project, we have chosen the detection condition in such a way that both corresponding joints are less than half the length of the limb from their exact location. As mentioned in the article, the problem with this criterion is that if the length of the limb is small, the probability of the limb being detected is high.
+### PDJ :
+The PDJ criterion is determined for each joint. First, the length of the torso, which is almost the largest organ among these 10 organs, is calculated, and if the error distance of each joint is less than a percentage of this length, this joint is recognized as detected.
