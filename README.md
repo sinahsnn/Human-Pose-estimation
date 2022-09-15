@@ -6,17 +6,17 @@ To prepare the data, after loading them with the original size, we first find th
 ## Procedure
 In this problem we are dealing with 14 joints. PCP metric is defined according to body organs. For this reason, we have chosen 10 body parts for this task, and you can see their list and joints with their numbers below:
 ### Joints 
--# 00 Right ankle 
--# 01 Right knee 
--# 02 Right hip 
+- # 00 Right ankle 
+- # 01 Right knee 
+- # 02 Right hip 
 -# 03 Left hip 
 -# 04 Left knee 
 -# 05 Left ankle 
 -# 06 Right wrist
 -# 07 Right elbow 
 -# 08 Right shoulder 
-# 09 Left shoulder 
-# 10 Left elbow 
+- # 09 Left shoulder 
+- # 10 Left elbow 
 -# 11 Left wrist 
 -# 12 Neck
 -# 13 Head top
