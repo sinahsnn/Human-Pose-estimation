@@ -31,4 +31,4 @@ In this problem we are dealing with 14 joints. PCP metric is defined according t
 - 07 Left Lower Arm: between joints 10 & 11  
 - 08 Head: between joints 12 & 13 
 - 09 Torso: between joints mean of 2 & 3 and mean of 8 & 9
-![image](https://user-images.githubusercontent.com/78251052/190516592-aaefff6c-9a9f-407b-98a6-1434ce0df14c.png)
+
